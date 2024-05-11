@@ -1,3 +1,6 @@
+//  --- User Roles & Permissions APIs
+//  1. --- Create User, Post, Category, Comment, Like, and Permission models.
+
 require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/user-roles-permissions');
