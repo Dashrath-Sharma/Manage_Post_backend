@@ -51,6 +51,21 @@ const registerUser = async(req, res) => {
     }
 }
 
+const getPost = async(req, res) => {
+    try{
+        return res.status(200).json({
+            success:true,
+            msg: "Working Fine!"
+        });
+    }catch(error){
+        return res.status(400).json({
+            success:false,
+            msg: error.message
+        });
+    }
+}
+
 module.exports = {
-    registerUser
+    registerUser,
+    getPost
 }
