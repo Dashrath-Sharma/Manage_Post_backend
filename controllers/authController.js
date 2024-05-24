@@ -54,7 +54,7 @@ const registerUser = async(req, res) => {
 }
 
 const generateAccessToken = async (user) => {
-    const token = jwt.sign(user, process.env.JWT_ACCESS_TOKEN, { expiresIn: "2h" });
+    const token = jwt.sign(user, process.env.ACCESS_SECRET_TOKEN, { expiresIn: "2h" });
     return token;
 }
 
@@ -109,7 +109,24 @@ const loginUser = async(req, res) => {
     }
 }
 
+const getProfile = async(req, res) => {
+    try{
+
+        return res.status(200).json({
+            success:true,
+            msg:"User profile",
+        })
+
+    }catch(error){
+        return res.status(400).json({
+            success:false,
+            msg:error.message
+        })
+    }
+}
+
 module.exports = {
     registerUser,
-    loginUser
+    loginUser,
+    getProfile
 }
