@@ -47,7 +47,7 @@ const addCategory = async(req, res) => {
     }
 }
 
-const getCategory = async(req, res) => {
+const getCategories = async(req, res) => {
     try{
 
         const categories = await Category.find({});
@@ -165,7 +165,7 @@ const updateCategory = async(req, res) => {
 
 module.exports = {
     addCategory,
-    getCategory,
+    getCategories,
     deleteCategory,
     updateCategory
 }
